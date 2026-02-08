@@ -3,6 +3,14 @@ import Script from "next/script";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar"
 // const GA_ID = process.env.NEXT_PUBLIC_GA_ID;
+import { Poppins } from "next/font/google";
+
+const poppins = Poppins({
+  subsets: ["latin"],
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-poppins",
+  display: "swap",
+});
 
 export const metadata = {
   title: {
@@ -17,7 +25,7 @@ export default function RootLayout({
   children,
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={poppins.variable}>
       <head>
         {/* JSON-LD Schema */}
         <script

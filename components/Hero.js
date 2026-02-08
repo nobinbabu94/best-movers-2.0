@@ -1,9 +1,7 @@
 'use client'
+
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
-
-// Images (Astro-safe)
-// import bgAyur from "/assets/banner.webp";
 
 /* -------------------- Icons -------------------- */
 const PhoneIcon = () => (
@@ -35,50 +33,29 @@ const ChevronRightIcon = () => (
 );
 
 const StarIcon = () => (
-  <svg className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
+  <svg className="w-3 h-3 md:w-5 md:h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
     <path d="M10 15l-5.878 3.09 1.123-6.545L.489 6.91l6.572-.955L10 0l2.939 5.955 6.572.955-4.756 4.635 1.123 6.545z" />
   </svg>
-);
-
-/* -------------------- Floating Container -------------------- */
-const FloatingContainer = () => (
-  <motion.div
-    className="absolute top-1/3 right-24 z-10 hidden md:block pointer-events-none"
-    initial={{ opacity: 0 }}
-    animate={{
-      opacity: 1,
-      y: [0, -20, 0],
-      x: [0, -30, 0],
-    }}
-    transition={{
-      opacity: { duration: 1 },
-      y: { duration: 6, repeat: Infinity, ease: "easeInOut" },
-      x: { duration: 12, repeat: Infinity, ease: "easeInOut" },
-    }}
-  >
-    <svg
-      width="140"
-      height="140"
-      viewBox="0 0 140 140"
-      fill="none"
-      className="opacity-60 blur-[0.4px]"
-    >
-      <rect x="20" y="30" width="100" height="80" rx="12"
-        stroke="white" strokeWidth="2"
-        fill="rgba(255,255,255,0.06)" />
-      <line x1="20" y1="55" x2="120" y2="55" stroke="white" strokeWidth="1" />
-      <line x1="50" y1="30" x2="50" y2="110" stroke="white" strokeWidth="1" />
-      <line x1="90" y1="30" x2="90" y2="110" stroke="white" strokeWidth="1" />
-    </svg>
-  </motion.div>
 );
 
 /* -------------------- Hero -------------------- */
 export default function Hero() {
   const slides = [
-    { image: '/assets/banner.webp', title: "Professional Moving Services", subtitle: "Seamless relocations" },
-    { image: '/assets/banner.webp', title: "Safe & Secure Packing", subtitle: "Handled with care" },
-    { image: '/assets/banner.webp', title: "24/7 Available", subtitle: "Moving made easy" },
+    { 
+      image: '/assets/hero-img-4.webp', 
+      title: "Professional Moving Services", 
+      subtitle: "Seamless relocations across the city"
+    },
+    { 
+      image: '/assets/Hero-img-2.webp', 
+      title: "Safe & Secure Packing", 
+      subtitle: "Your belongings handled with care"
+    },
+    { 
+      image: '/assets/Hero-img-3.webp', 
+      title: "24/7 Available", 
+      subtitle: "Moving made easy, anytime"
+    },
   ];
 
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -88,89 +65,123 @@ export default function Hero() {
       setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
-  }, []);
+  }, [slides.length]);
+
+  const nextSlide = () => setCurrentSlide((prev) => (prev + 1) % slides.length);
+  const prevSlide = () => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
 
   return (
-    <div className="relative h-screen w-full overflow-hidden bg-black">
+    <div className="relative w-full overflow-hidden bg-black h-[500px] sm:h-[600px] md:h-[700px] lg:h-screen">
 
-      {/* Background slider */}
+      {/* Background slider with improved animations */}
       <AnimatePresence mode="wait">
         <motion.div
           key={currentSlide}
-          initial={{ opacity: 0.5 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0.5 }}
-          transition={{ duration: 0.8 }}
+          initial={{ opacity: 0, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.95 }}
+          transition={{ duration: 0.7, ease: "easeInOut" }}
           className="absolute inset-0"
         >
           <img
             src={slides[currentSlide].image}
-            className="w-full h-full object-cover"
-            alt=""
+            className="w-full h-full object-cover object-center"
+            alt={slides[currentSlide].title}
           />
-          <div className="absolute inset-0 bg-black/60" />
+          {/* Gradient overlay for better text readability */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
         </motion.div>
       </AnimatePresence>
 
-      {/* Floating animation */}
-      {/* {currentSlide === 0 && <FloatingContainer />} */}
-
-      {/* Desktop arrows */}
-      <button onClick={() => setCurrentSlide((p) => (p - 1 + slides.length) % slides.length)}
-        className="hidden md:flex absolute left-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 p-3 rounded-full text-white">
+      {/* Navigation arrows - improved styling */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-2 sm:p-3 rounded-full text-white transition-all duration-200 active:scale-95"
+        aria-label="Previous slide"
+      >
         <ChevronLeftIcon />
       </button>
 
-      <button onClick={() => setCurrentSlide((p) => (p + 1) % slides.length)}
-        className="hidden md:flex absolute right-4 top-1/2 -translate-y-1/2 z-20 bg-white/20 p-3 rounded-full text-white">
+      <button
+        onClick={nextSlide}
+        className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-2 sm:p-3 rounded-full text-white transition-all duration-200 active:scale-95"
+        aria-label="Next slide"
+      >
         <ChevronRightIcon />
       </button>
 
-      {/* Content */}
-      <div className="relative z-10 h-full flex items-center">
-        <div className="max-w-7xl mx-auto md:px-8 px-4 w-full">
-          <motion.div
-            key={currentSlide}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
-            className="max-w-3xl"
-          >
-            <h1 className="text-xl sm:text-2xl md:text-2xl lg:text-4xl font-bold text-white mb-3">
-              {slides[currentSlide].title}
-            </h1>
+      {/* Content - improved positioning and animations */}
+      <div className="relative z-10 h-full flex items-end pb-20 sm:pb-24 md:pb-28 lg:pb-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 w-full">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentSlide}
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+              className="max-w-3xl"
+            >
+              <motion.h1 
+                className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-white mb-3 sm:mb-4 md:mb-5 leading-tight"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.2, duration: 0.6 }}
+              >
+                {slides[currentSlide].title}
+              </motion.h1>
 
-            <p className="text-sm sm:text-lg md:text-xl text-white/90 mb-8">
-              {slides[currentSlide].subtitle}
-            </p>
+              <motion.p 
+                className="text-sm sm:text-base md:text-lg lg:text-xl text-white/90 mb-6 sm:mb-8 md:mb-10"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3, duration: 0.6 }}
+              >
+                {slides[currentSlide].subtitle}
+              </motion.p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <button className="bg-blue-600 text-sm text-white px-4 py-3  rounded-lg font-bold flex items-center gap-2">
-                Get Free Quote <ArrowRightIcon />
-              </button>
+              <motion.div 
+                className="flex flex-col sm:flex-row gap-3 sm:gap-4"
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.4, duration: 0.6 }}
+              >
+                <button className="bg-blue-600 hover:bg-blue-700 text-sm sm:text-base text-white px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-all duration-200 active:scale-95 shadow-lg hover:shadow-xl">
+                  Get Free Quote <ArrowRightIcon />
+                </button>
 
-              <a href="tel:+919562763030"
-                className="bg-white text-sm text-gray-900 px-4 py-3 rounded-lg font-bold flex items-center gap-2">
-                <PhoneIcon /> Call Now
-              </a>
-            </div>
-          </motion.div>
+                <a
+                  href="tel:+919562763030"
+                  className="bg-white hover:bg-gray-100 text-sm sm:text-base text-gray-900 px-6 sm:px-8 py-3 sm:py-4 rounded-lg font-bold flex items-center justify-center gap-2 transition-all duration-200 active:scale-95 shadow-lg hover:shadow-xl"
+                >
+                  <PhoneIcon /> Call Now
+                </a>
+              </motion.div>
+            </motion.div>
+          </AnimatePresence>
         </div>
       </div>
 
-      {/* Dots */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex gap-2">
+      {/* Dots indicator - improved positioning */}
+      <div className="absolute bottom-6 sm:bottom-8 md:bottom-10 left-1/2 -translate-x-1/2 z-20 flex gap-2">
         {slides.map((_, i) => (
-          <button key={i}
+          <button
+            key={i}
             onClick={() => setCurrentSlide(i)}
-            className={`h-2 ${i === currentSlide ? "w-8 bg-white" : "w-2 bg-white/50"} rounded-full`} />
+            className={`h-2 rounded-full transition-all duration-300 ${
+              i === currentSlide ? "w-8 bg-white" : "w-2 bg-white/50 hover:bg-white/70"
+            }`}
+            aria-label={`Go to slide ${i + 1}`}
+          />
         ))}
       </div>
 
-      {/* Rating */}
-      <div className="absolute bottom-8 right-8 hidden lg:flex items-center gap-2 bg-white/10 px-5 py-3 rounded-full">
-        {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
-        <span className="text-white font-semibold">5.0</span>
+      {/* Rating badge - improved responsive display */}
+      <div className="absolute bottom-4 right-4 sm:top-6 sm:right-6 md:bottom-8 md:top-auto flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 sm:px-5 py-2 sm:py-3 rounded-full shadow-lg">
+        <div className="flex">
+          {[...Array(5)].map((_, i) => <StarIcon key={i} />)}
+        </div>
+        <span className="text-white font-semibold text-sm sm:text-base">5.0</span>
       </div>
     </div>
   );
