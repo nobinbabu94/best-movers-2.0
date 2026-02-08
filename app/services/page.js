@@ -1,7 +1,7 @@
 'use client';
 
 import Link from "next/link";
-import bgAyur from "@/public/assets/banner.webp";
+import bgAyur from "@/public/assets/Hero-srvice-1.webp";
 import Image from "next/image";
 
 export default function ServicesPage() {
@@ -17,11 +17,11 @@ export default function ServicesPage() {
                     className="object-cover"
                 />
                 <div className="absolute inset-0 bg-black/50" />
-                <div className="relative z-10 h-full flex flex-col justify-end items-center text-center px-6 pb-16">
-                    <h1 className="text-white text-4xl md:text-6xl font-bold">Our Services</h1>
-                    <p className="mt-4 text-white/90 max-w-2xl text-lg">
+                <div className="relative z-10 h-full flex flex-col justify-end items-center text-center px-6 pb-6">
+                    <h1 className="text-white text-2xl md:text-4xl font-bold">Our Services</h1>
+                    {/* <p className="mt-4 text-white/90 max-w-2xl text-lg">
                         Comprehensive moving solutions for homes, offices & businesses
-                    </p>
+                    </p> */}
                 </div>
             </section>
 
