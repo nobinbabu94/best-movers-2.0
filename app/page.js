@@ -2,6 +2,7 @@ import Image from "next/image";
 import Hero from "../components/Hero";
 import Link from "next/link";
 import { services, testimonials } from "./utils/constantFiles";
+import About from "../components/About"
 
 export default function Home() {
   return (
@@ -9,140 +10,7 @@ export default function Home() {
       <Hero />
 
       {/* About Section - Enhanced Design */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-white to-gray-50 py-20 md:py-28">
-        {/* Decorative elements */}
-        <div className="pointer-events-none absolute -top-40 -left-40 h-96 w-96 rounded-full bg-blue-500/5 blur-3xl" />
-        <div className="pointer-events-none absolute -bottom-40 -right-40 h-96 w-96 rounded-full bg-purple-500/5 blur-3xl" />
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid items-center gap-12 lg:gap-20 lg:grid-cols-2">
-            
-            {/* LEFT – IMAGE */}
-            <div className="relative order-2 lg:order-1">
-              {/* Background decorative shape */}
-              <div className="absolute inset-0 translate-x-6 translate-y-6 rounded-3xl bg-gradient-to-br from-blue-600/10 to-purple-600/10 -z-10" />
-              
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl">
-                <Image
-                  src={"/assets/moving-best-packers.webp"}
-                  width={600}
-                  height={500}
-                  alt="Best Packers and Movers in Kochi"
-                  className="w-full h-[400px] md:h-[500px] object-cover"
-                  priority={false}
-                />
-                
-                {/* Overlay gradient */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-              </div>
-
-              {/* Experience Badge */}
-              <div className="absolute -top-6 -left-6 z-20 bg-gradient-to-br from-blue-600 to-blue-700 text-white rounded-2xl p-6 shadow-2xl">
-                <div className="flex items-end gap-1 mb-1">
-                  <span className="text-5xl font-extrabold">18</span>
-                  <span className="text-2xl font-bold text-blue-200">+</span>
-                </div>
-                <p className="text-sm font-semibold uppercase tracking-wide text-blue-100">
-                  Years Experience
-                </p>
-              </div>
-
-              {/* Trust Badge */}
-              <div className="absolute -bottom-6 -right-6 z-20 bg-white rounded-2xl px-6 py-4 shadow-xl border border-gray-100">
-                <div className="flex items-center gap-3">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-500 text-white text-2xl">
-                    ✓
-                  </div>
-                  <div>
-                    <p className="text-sm font-bold text-gray-900">Verified Partner</p>
-                    <p className="text-xs text-gray-600">ISO Certified</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* RIGHT – CONTENT */}
-            <div className="space-y-6 order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 bg-blue-50 px-4 py-2 rounded-full">
-                <span className="h-2 w-2 rounded-full bg-blue-600 animate-pulse" />
-                <span className="text-sm font-bold uppercase tracking-wider text-blue-700">
-                  About Our Company
-                </span>
-              </div>
-
-              <h2 className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight text-gray-900">
-                Best Packers and Movers in{" "}
-                <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                  Kochi
-                </span>
-              </h2>
-
-              <p className="text-lg text-gray-700 leading-relaxed border-l-4 border-blue-600 pl-5">
-                Relocation needs experience, precision, and trust. As a reliable
-                <strong className="text-gray-900"> packers and movers company in Kochi</strong>, 
-                we deliver safe, professional, and cost-effective moving solutions.
-              </p>
-
-              <p className="text-lg text-gray-700 leading-relaxed">
-                Known among the{" "}
-                <strong className="text-gray-900">best packers and movers in Kochi</strong>, 
-                we handle local shifting, all-India relocation, and international packing 
-                services with care.
-              </p>
-
-              {/* Features Grid */}
-              <div className="grid sm:grid-cols-2 gap-4 pt-4">
-                {[
-                  { 
-                    icon: "🛡️",
-                    title: "Safe & Secure", 
-                    desc: "100% Safety Guaranteed" 
-                  },
-                  { 
-                    icon: "💰",
-                    title: "Best Price", 
-                    desc: "Affordable Rates" 
-                  },
-                  { 
-                    icon: "⚡",
-                    title: "Fast Service", 
-                    desc: "Quick Delivery" 
-                  },
-                  { 
-                    icon: "🎯",
-                    title: "Professional Team", 
-                    desc: "Expert Handling" 
-                  },
-                ].map((item) => (
-                  <div
-                    key={item.title}
-                    className="flex gap-4 rounded-2xl bg-white border border-gray-100 p-5 transition-all duration-300 hover:shadow-lg hover:border-blue-200 hover:-translate-y-1"
-                  >
-                    <span className="text-3xl">{item.icon}</span>
-                    <div>
-                      <p className="font-bold text-gray-900 mb-1">{item.title}</p>
-                      <p className="text-sm text-gray-600">{item.desc}</p>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {/* CTA */}
-              <div className="pt-6">
-                <Link
-                  href="/contact"
-                  className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800 text-white px-8 py-4 rounded-xl font-semibold shadow-xl hover:shadow-2xl hover:shadow-blue-500/50 transition-all duration-300 hover:scale-105 active:scale-95"
-                >
-                  Get Free Quote →
-                </Link>
-                <p className="mt-4 text-sm text-gray-600">
-                  ✨ No hidden charges • Quick response within 30 minutes
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <About />
 
       {/* Professional Section */}
       <section className="relative overflow-hidden bg-white py-20 md:py-28">
@@ -329,7 +197,7 @@ export default function Home() {
 
                 {/* Review */}
                 <p className="text-gray-700 leading-relaxed mb-6 italic">
-                  "{t.review}"
+                 {` "${t.review}"`}
                 </p>
 
                 {/* Footer */}

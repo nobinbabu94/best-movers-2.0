@@ -78,13 +78,13 @@ export default function ContactPage() {
               </div>
 
               <h2 className="text-4xl md:text-5xl font-extrabold text-gray-900 leading-tight mb-6">
-                Let's Plan Your Move Together
-              </h2>
+{`                Let's Plan Your Move Together
+`}              </h2>
 
               <p className="text-xl text-gray-700 leading-relaxed mb-6">
-                Moving doesn't have to be stressful. Whether it's a local move in Kochi
+                {`Moving doesn't have to be stressful. Whether it's a local move in Kochi
                 or a long-distance relocation across India, our expert team is here
-                to help.
+                to help.`}
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed mb-10">
@@ -154,7 +154,7 @@ export default function ContactPage() {
                   <div>
                     <strong className="block text-gray-900 font-bold text-lg mb-2">Working Hours</strong>
                     <p className="text-gray-700">Monday - Sunday: 24/7 Available</p>
-                    <p className="text-sm text-gray-600 mt-1">We're always here when you need us</p>
+                    <p className="text-sm text-gray-600 mt-1">{`We're always here when you need us`}</p>
                   </div>
                 </div>
               </div>
@@ -233,7 +233,7 @@ export default function ContactPage() {
               Why Choose Us?
             </h2>
             <p className="text-blue-100 text-lg">
-              We're committed to making your move smooth and stress-free
+             {` We're committed to making your move smooth and stress-free`}
             </p>
           </div>
 
@@ -277,7 +277,7 @@ export default function ContactPage() {
       <section className="bg-white py-16">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-extrabold text-gray-900 mb-6">
-            Ready to Move? Let's Make It Happen!
+           {` Ready to Move? Let's Make It Happen!`}
           </h2>
           <p className="text-xl text-gray-600 mb-10">
             Get your free quote today and experience hassle-free relocation
