@@ -1,7 +1,9 @@
 'use client';
 
 import Link from "next/link";
-import bgAyur from "@/public/assets/Hero-srvice-1.webp";
+import bgAyur from "@/public/assets/service-hero.webp";
+import bgService from "@/public/assets/Hero-srvice-1.webp";
+
 import Image from "next/image";
 
 export default function ServicesPage() {
@@ -14,14 +16,23 @@ export default function ServicesPage() {
                     alt="About Best Packers and Movers"
                     fill
                     priority
-                    className="object-cover"
+                    className=" object-top-left object-cover "
                 />
-                <div className="absolute inset-0 bg-black/50" />
+                {/* <Image
+                    src={bgService}
+                    alt="About Best Packers and Movers"
+                    fill
+                    priority
+                    className="object-center object-cover hidden md:flex"
+                /> */}
+                {/* <div className="absolute inset-0 bg-black/50" /> */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+
                 <div className="relative z-10 h-full flex flex-col justify-end items-center text-center px-6 pb-6">
-                    <h1 className="text-white text-2xl md:text-4xl font-bold">Our Services</h1>
-                    {/* <p className="mt-4 text-white/90 max-w-2xl text-lg">
+                    <h1 className="text-white text-4xl md:text-4xl font-bold">Our Services</h1>
+                    <p className="mt-4 text-white/90 max-w-2xl text-lg">
                         Comprehensive moving solutions for homes, offices & businesses
-                    </p> */}
+                    </p>
                 </div>
             </section>
 

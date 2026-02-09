@@ -1,5 +1,5 @@
 'use client';
-import bgAyur from "@/public/assets/banner.webp";
+import bgAyur from "@/public/assets/Hero-contact.webp";
 
 import ContactForm from "@/components/ContactForm";
 // import QuoteForm from "@/react/QuoteForm";
@@ -16,16 +16,18 @@ export default function ContactPage() {
           alt="Contact Best Packers and Movers Kochi"
           fill
           priority
-          className="object-cover"
+          className="object-cover md:object-top object-top-left"
         />
 
-        <div className="absolute inset-0 bg-black/55" />
+        {/* <div className="absolute inset-0 bg-black/55" /> */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
 
-        <div className="relative z-10 flex h-full flex-col items-center justify-end px-6 pb-16 text-center">
-          <h1 className="text-4xl md:text-6xl font-extrabold text-white drop-shadow-lg">
+
+        <div className="relative z-10 flex h-full flex-col items-center justify-end px-6 pb-6 text-center">
+         <h1 className="text-white text-4xl md:text-4xl font-bold">
             Contact Best Packers & Movers
           </h1>
-          <p className="mt-4 max-w-2xl text-lg md:text-xl text-white/90">
+           <p className="mt-4 text-white/90 max-w-2xl text-lg">
             Get in touch with trusted packers and movers in Kochi for safe,
             affordable, and stress-free relocation services across Kerala.
           </p>

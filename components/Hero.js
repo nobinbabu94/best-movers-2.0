@@ -96,7 +96,7 @@ export default function Hero() {
       {/* Navigation arrows - improved styling */}
       <button
         onClick={prevSlide}
-        className="absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-2 sm:p-3 rounded-full text-white transition-all duration-200 active:scale-95"
+        className=" hidden md:absolute left-2 sm:left-4 md:left-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-2 sm:p-3 rounded-full text-white transition-all duration-200 active:scale-95"
         aria-label="Previous slide"
       >
         <ChevronLeftIcon />
@@ -104,7 +104,7 @@ export default function Hero() {
 
       <button
         onClick={nextSlide}
-        className="absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-2 sm:p-3 rounded-full text-white transition-all duration-200 active:scale-95"
+        className="hidden md:absolute right-2 sm:right-4 md:right-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 hover:bg-white/30 backdrop-blur-sm p-2 sm:p-3 rounded-full text-white transition-all duration-200 active:scale-95"
         aria-label="Next slide"
       >
         <ChevronRightIcon />

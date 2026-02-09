@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import bgAyur from "@/public/assets/banner.webp";
+import bgAyur from "@/public/assets/aboutus-page-hero.webp";
 import aboutImg from "@/public/assets/about-bestpackersmovers.webp";
 
 export const metadata = {
@@ -41,12 +41,14 @@ export default function AboutPage() {
           alt="About Best Packers and Movers"
           fill
           priority
-          className="object-cover"
+          className="object-cover object-top"
         />
-        <div className="absolute inset-0 bg-black/50" />
-        <div className="relative z-10 h-full flex flex-col justify-end items-center text-center px-6 pb-16">
-          <h1 className="text-white text-4xl md:text-6xl font-bold">About Us</h1>
-          <p className="mt-4 text-white/90 max-w-2xl text-lg">
+        {/* <div className="absolute inset-0 bg-black/50" /> */}
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
+
+        <div className="relative z-10 h-full flex flex-col justify-end items-center text-center px-6 pb-6">
+        <h1 className="text-white text-4xl md:text-4xl font-bold">About Us</h1>
+               <p className="mt-4 text-white/90 max-w-2xl text-lg">
             Kerala’s trusted packers & movers since 1996
           </p>
         </div>
