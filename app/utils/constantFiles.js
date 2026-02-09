@@ -22,7 +22,7 @@ export const services = [
   {
     title: "Car & Bike Transportation Services",
     desc: "Safe and secure car and bike transport services with protective packaging for local, all-India, and international moves.",
-    img: "/assets/car.webp"
+    img: "/assets/Car-Bike-Transportation-Services.webp"
   },
   {
     title: "Professional Packers and Movers Kochi",
@@ -77,27 +77,27 @@ export const services = [
   {
     title: "Corporate Relocation Movers",
     desc: "End-to-end corporate and employee relocation services with complete planning and execution.",
-    img: "/assets/transport.webp"
+    img: "/assets/Corporate Relocation-Movers.webp"
   },
   {
     title: "Relocation Movers",
     desc: "Expert relocation movers handling local, all-India, and international shifting.",
-    img: "/assets/transport.webp"
+    img: "/assets/Relocation-Movers.webp"
   },
   {
     title: "Door-to-Door Moving Services",
     desc: "Complete door-to-door moving solutions including packing, transport, and setup.",
-    img: "/assets/transport.webp"
+    img: "/assets/Door-to-Door-Movingi-Services.webp"
   },
   {
     title: "Warehousing & Storage Services",
     desc: "Secure warehousing and storage services for short-term and long-term needs.",
-    img: "/assets/transport.webp"
+    img: "/assets/Warehousing-Storage-Services.webp"
   },
   {
     title: "Trustworthy & Verified Movers",
     desc: "Highly trusted movers in Kochi with verified staff and proven experience.",
-    img: "/assets/transport.webp"
+    img: "/assets/Trustworthy-Verified-Movers.webp"
   }
 ];
 
