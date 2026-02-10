@@ -344,7 +344,7 @@ export default function ContactForm() {
         </div>
       )}
 
-      {submitStatus === "error" && (
+      {/* {submitStatus === "error" && (
         <div className="p-4 bg-red-50 border-2 border-red-200 rounded-xl flex items-start gap-3">
           <span className="text-2xl">❌</span>
           <div>
@@ -356,7 +356,7 @@ export default function ContactForm() {
             </p>
           </div>
         </div>
-      )}
+      )} */}
 
       <button
         onClick={handleSubmit}
