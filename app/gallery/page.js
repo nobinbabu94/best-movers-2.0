@@ -29,80 +29,39 @@ export default function GalleryPage() {
         {
             id: 2,
              category: "household",
-            image: "/assets/loading-truck.webp",
+            image: "/assets/001.jpeg",
             title: "Complete Relocation",
             description: "moving in Kochi"
         },
         {
             id: 3,
             category: "household",
-            image: "/assets/loading-truck.webp",
+            image: "/assets/004.jpeg",
             title: "Complete Relocation",
             description: "moving in Kochi"
         },
         {
             id: 4,
             category: "household",
-            image: "/assets/loading-truck.webp",
+            image: "/assets/005.jpeg",
             title: "Complete Relocation",
             description: "moving in Kochi"
         },
         {
             id: 5,
            category: "household",
-            image: "/assets/loading-truck.webp",
+            image: "/assets/006.jpeg",
             title: "Complete Relocation",
             description: "moving in Kochi"
         },
         {
             id: 6,
             category: "household",
-            image: "/assets/loading-truck.webp",
+            image: "/assets/007.jpeg",
             title: "Complete Relocation",
             description: "moving in Kochi"
         },
-        {
-            id: 7,
-            category: "household",
-            image: "/assets/loading-truck.webp",
-            title: "Complete Relocation",
-            description: "moving in Kochi"
-        },
-        {
-            id: 8,
-            category: "household",
-            image: "/assets/loading-truck.webp",
-            title: "Complete Relocation",
-            description: "moving in Kochi"
-        },
-        {
-            id: 9,
-             category: "household",
-            image: "/assets/loading-truck.webp",
-            title: "Complete Relocation",
-            description: "moving in Kochi"
-        },
-        {
-            id: 10,
-            category: "household",
-            image: "/assets/loading-truck.webp",
-            title: "Complete Relocation",
-            description: "moving in Kochi"
-        },
-        {
-            id: 11,
-            category: "household",
-            image: "/assets/loading-truck.webp",
-            title: "Complete Relocation",
-            description: "moving in Kochi"
-        },
-        {
-            id: 12,
-             category: "household",
-            image: "/assets/loading-truck.webp",
-            title: "Complete Relocation",
-            description: "moving in Kochi"
-        },
+        
     ];
 
     const filteredItems = selectedCategory === "all"
