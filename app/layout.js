@@ -14,11 +14,11 @@ const poppins = Poppins({
 
 export const metadata = {
   title: {
-    default: "ABC Packers & Movers",
-    template: "%s | ABC Packers & Movers",
+    default: "Best Packers & Movers",
+    template: "%s | Best Packers & Movers",
   },
   description: "Professional packing and moving services across India.",
-  metadataBase: new URL("https://yourdomain.com"),
+  metadataBase: new URL("https://best-movers.in"),
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "MovingCompany",
-              name: "ABC Packers & Movers",
+              name: "Best Packers & Movers",
               areaServed: "India",
               telephone: "+919562763030",
             }),
