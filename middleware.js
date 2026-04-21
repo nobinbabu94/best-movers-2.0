@@ -2,7 +2,7 @@ import { NextResponse } from 'next/server';
 
 // ✅ Set MAINTENANCE_MODE to true to lock the site
 // ✅ Set to false to restore the site when client pays
-const MAINTENANCE_MODE = true;
+const MAINTENANCE_MODE = false;
 
 export function middleware(request) {
   const { pathname } = request.nextUrl;

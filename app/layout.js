@@ -64,11 +64,11 @@ export default function RootLayout({
         {/* Mobile Action Bar */}
         {/* <MobileActionBar /> */}
 
-        {/* <Navbar logo="/assets/best-packers-logo.png" /> */}
+        <Navbar logo="/assets/best-packers-logo.png" />
 
         <main className="w-full ">{children}</main>
 
-        {/* <Footer /> */}
+        <Footer />
       </body>
     </html>
   );
