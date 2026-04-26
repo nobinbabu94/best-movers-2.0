@@ -16,7 +16,10 @@ export function middleware(request) {
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/favicon') ||
-    pathname.startsWith('/api')
+    pathname.startsWith('/api') ||
+    pathname === '/robots.txt' ||
+    pathname === '/sitemap.xml' ||
+    pathname === '/manifest.json'
   ) {
     return NextResponse.next();
   }
