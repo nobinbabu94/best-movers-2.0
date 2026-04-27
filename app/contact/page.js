@@ -1,5 +1,4 @@
 'use client';
-import bgAyur from "@/public/assets/Hero-contact.webp";
 import ContactForm from "@/components/ContactForm";
 import Image from "next/image";
 
@@ -10,7 +9,7 @@ export default function ContactPage() {
       {/* HERO SECTION - Enhanced */}
       <section className="relative h-[65vh] min-h-[500px] w-full overflow-hidden">
         <Image
-          src={bgAyur}
+          src="/assets/Hero-contact.webp"
           alt="Contact Best Packers and Movers Kochi"
           fill
           priority

@@ -1,7 +1,5 @@
 import Image from "next/image";
 import Link from "next/link";
-import bgAyur from "@/public/assets/aboutus-page-hero.webp";
-import aboutImg from "@/public/assets/about-bestpackersmovers.webp";
 
 export const metadata = {
   title: "About Us - Best Packers and Movers | 18+ Years of Trusted Service in Kochi",
@@ -37,7 +35,7 @@ export default function AboutPage() {
       {/* Hero */}
       <section className="relative h-[60vh] min-h-[400px]">
         <Image
-          src={bgAyur}
+          src="/assets/aboutus-page-hero.webp"
           alt="About Best Packers and Movers"
           fill
           priority
@@ -70,8 +68,10 @@ export default function AboutPage() {
       <section className=" bg-white mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
         <div className="relative">
           <Image
-            src={aboutImg}
+            src="/assets/about-bestpackersmovers.webp"
             alt="Best Packers and Movers Team"
+            width={700}
+            height={520}
             className="rounded-3xl shadow-2xl"
           />
           <div className="absolute -bottom-6 -right-6 bg-blue-600 text-white p-6 rounded-2xl">

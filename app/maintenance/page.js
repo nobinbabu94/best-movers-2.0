@@ -105,8 +105,8 @@ export default function MaintenancePage() {
           lineHeight: '1.7',
           margin: '0 0 36px 0',
         }}>
-          We're currently performing some updates to bring you a better experience.
-          We'll be back online shortly.
+          We&apos;re currently performing some updates to bring you a better experience.
+          We&apos;ll be back online shortly.
         </p>
 
         {/* Divider */}

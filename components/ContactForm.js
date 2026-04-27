@@ -1,6 +1,5 @@
 "use client";
-import { useEffect, useState } from "react";
-import emailjs from "@emailjs/browser";
+import { useState } from "react";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -14,6 +13,7 @@ export default function ContactForm() {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState(null);
+  const [submitError, setSubmitError] = useState("");
   //   const [recaptchaReady, setRecaptchaReady] = useState(false);
 
   //   useEffect(() => {
@@ -112,6 +112,7 @@ export default function ContactForm() {
 
     setIsSubmitting(true);
     setSubmitStatus(null);
+    setSubmitError("");
 
     try {
       //   let recaptchaToken = null;
@@ -130,46 +131,26 @@ export default function ContactForm() {
       //     }
       //   }
 
-      // Prepare email data
-      const emailData = {
-        name: formData.name,
-        email: formData.email,
-        phone: formData.phone,
-        title: formData.subject,
-        message: formData.message,
-      };
-
-      // Add reCAPTCHA token if available
-      //   if (recaptchaToken) {
-      //     emailData['g-recaptcha-response'] = recaptchaToken;
-      //   }
-
-      // Send email via EmailJS
       const response = await fetch("/api/contact", {
         method: "POST",
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
       });
-      if (response?.status === 200) {
-        const data = await response.json();
-        setNotification(true);
-        setIsLoading(false);
-        setSuccessMessage(data);
-        toast.success(
-          "Message Sent Successfully, We will back to you as soon as possible",
-          {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: false,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "light",
-            transition: Bounce,
-          },
-        );
-        // throw new Error('Failed to submit the data. Please try again.')
+
+      if (!response.ok) {
+        const errorText = await response.text();
+        let parsedError = "Failed to send message";
+
+        try {
+          const parsed = JSON.parse(errorText);
+          parsedError = parsed.error || parsed.message || parsedError;
+        } catch {
+          parsedError = errorText || parsedError;
+        }
+
+        throw new Error(parsedError);
       }
+
       setSubmitStatus("success");
       setFormData({
         name: "",
@@ -182,6 +163,7 @@ export default function ContactForm() {
       setTimeout(() => setSubmitStatus(null), 5000);
     } catch (error) {
       console.error("❌ Form submission error:", error);
+      setSubmitError(error?.message || "Failed to send message");
       setSubmitStatus("error");
       setTimeout(() => setSubmitStatus(null), 5000);
     } finally {
@@ -344,19 +326,24 @@ export default function ContactForm() {
         </div>
       )}
 
-      {/* {submitStatus === "error" && (
-        <div className="p-4 bg-red-50 border-2 border-red-200 rounded-xl flex items-start gap-3">
-          <span className="text-2xl">❌</span>
-          <div>
-            <p className="font-semibold text-red-800">
-              Oops! Something went wrong.
-            </p>
-            <p className="text-sm text-red-700 mt-1">
-              Please try again or call us directly at +91 95627 63030.
-            </p>
+      {submitStatus === "error" && (
+        <div className="p-4 bg-red-50 border-2 border-red-200 rounded-xl flex flex-col gap-3">
+          <div className="flex items-start gap-3">
+            <span className="text-2xl">❌</span>
+            <div>
+              <p className="font-semibold text-red-800">
+                Oops! Something went wrong.
+              </p>
+              <p className="text-sm text-red-700 mt-1">
+                Please try again or call us directly at +91 95627 63030.
+              </p>
+            </div>
           </div>
+          {submitError && (
+            <p className="text-sm text-red-700">Error: {submitError}</p>
+          )}
         </div>
-      )} */}
+      )}
 
       <button
         onClick={handleSubmit}

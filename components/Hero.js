@@ -1,5 +1,6 @@
 'use client'
 
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 
@@ -83,10 +84,11 @@ export default function Hero() {
           transition={{ duration: 0.7, ease: "easeInOut" }}
           className="absolute inset-0"
         >
-          <img
+          <Image
             src={slides[currentSlide].image}
-            className="w-full h-full object-cover object-center"
             alt={slides[currentSlide].title}
+            fill
+            className="object-cover object-center"
           />
           {/* Gradient overlay for better text readability */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />

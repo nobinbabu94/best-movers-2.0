@@ -1,26 +1,44 @@
-import nodemailer from 'nodemailer'
+import nodemailer from 'nodemailer';
 
+export async function POST(req) {
+  const body = await req.json();
 
-export async function POST(req, res) {
+  const senderEmail = process.env.CONTACT_EMAIL;
+  const senderPassword = process.env.CONTACT_EMAIL_PASSWORD;
 
-  if (req.method === "POST") {
-    const body = await req.json();
-    try {
-    
+  if (!senderEmail || !senderPassword) {
+    return new Response(
+      JSON.stringify({ status: 500, error: 'Email transport not configured. Set CONTACT_EMAIL and CONTACT_EMAIL_PASSWORD.' }),
+      {
+        status: 500,
+        headers: { 'Content-Type': 'application/json' },
+      },
+    );
+  }
 
-      const transporter = nodemailer.createTransport({
-        service: 'gmail', // Use 'gmail' or another email service
-        auth: {
-          user: process.env.CONTACT_EMAIL, // my email address
-          pass: process.env.CONTACT_EMAIL_PASSWORD // my email app password(email account -> app password -> your app password-> create new or (contactform))
-        },
-      });
-      // Define the email options
-      const mailOptions = {
-        from: process.env.CONTACT_EMAIL,
-        to: process.env.CONTACT_EMAIL, // my mail or a different recipient if needed
-        subject: 'Message from Best Packers and Movers',
-        html: `
+  try {
+    const transporter = nodemailer.createTransport({
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true,
+      auth: {
+        user: senderEmail,
+        pass: senderPassword,
+      },
+      tls: {
+        rejectUnauthorized: false,
+      },
+    });
+
+    await transporter.verify();
+
+    const mailOptions = {
+      from: senderEmail,
+      to: senderEmail,
+      replyTo: body?.email,
+      subject: 'Message from Best Packers and Movers',
+      text: `Name: ${body?.name}\nEmail: ${body?.email}\nPhone: ${body?.phone}\nSubject: ${body?.subject}\nMessage: ${body?.message}`,
+      html: `
         <table style="border-collapse: collapse; width: 100%; max-width: 600px;">
           <tr>
             <th style="border: 1px solid #ddd; padding: 8px; text-align: left;">Field</th>
@@ -39,7 +57,7 @@ export async function POST(req, res) {
             <td style="border: 1px solid #ddd; padding: 8px;">${body?.phone}</td>
           </tr>
           <tr>
-            <td style="border: 1px solid #ddd; padding: 8px;">Mobile</td>
+            <td style="border: 1px solid #ddd; padding: 8px;">Subject</td>
             <td style="border: 1px solid #ddd; padding: 8px;">${body?.subject}</td>
           </tr>
           <tr>
@@ -48,25 +66,20 @@ export async function POST(req, res) {
           </tr>
         </table>
       `,
-      };
+    };
 
-      // Send the email
-      await transporter.sendMail(mailOptions);
-      return new Response(JSON.stringify({ status: 200, message: 'Message sent successfully!' }), {
-        status: 200,
-        // headers: { 'Content-Type': 'application/json' },
-      });
-    }
-    catch (error) {
-      console.log('Error sending email:', error);
-      // Respond with an error message
-      return new Response(JSON.stringify({ status: 500, error: 'Failed to send email' }), {
-        status: 500,
-        // headers: { 'Content-Type': 'application/json' },
-      });
+    await transporter.sendMail(mailOptions);
 
-    }
-
+    return new Response(JSON.stringify({ status: 200, message: 'Message sent successfully!' }), {
+      status: 200,
+      headers: { 'Content-Type': 'application/json' },
+    });
+  } catch (error) {
+    console.log('Error sending email:', error);
+    const message = error?.message || 'Failed to send email';
+    return new Response(JSON.stringify({ status: 500, error: message }), {
+      status: 500,
+      headers: { 'Content-Type': 'application/json' },
+    });
   }
-
 }

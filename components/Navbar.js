@@ -1,5 +1,6 @@
 'use client'
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
 
 export default function Navbar({ logo }) {
@@ -76,10 +77,12 @@ export default function Navbar({ logo }) {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <img
+            <Image
               src={logo}
               alt="Best Packers and Movers Kochi"
-              className="h-12 md:h-14 transition-all duration-200"
+              width={180}
+              height={60}
+              className="h-12 md:h-14 transition-all duration-200 object-contain"
             />
           </motion.a>
 

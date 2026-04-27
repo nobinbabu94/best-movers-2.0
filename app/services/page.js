@@ -1,19 +1,84 @@
-'use client';
-
 import Link from "next/link";
-import bgAyur from "@/public/assets/service-hero.webp";
-import bgService from "@/public/assets/Hero-srvice-1.webp";
-
 import Image from "next/image";
+
+export const metadata = {
+  title: "Best Packers and Movers in Kochi | Home, Office & Interstate Shifting",
+  description:
+    "Best Packers and Movers in Kochi offering trusted home shifting, office relocation, interstate moving, and vehicle transport services across India.",
+  keywords: [
+    "best packers and movers kochi",
+    "packers and movers kochi",
+    "office shifting kochi",
+    "home shifting kochi",
+    "interstate movers from kochi",
+    "moving company kochi",
+  ],
+  alternates: {
+    canonical: "/services",
+  },
+  openGraph: {
+    title: "Best Packers and Movers in Kochi | Home, Office & Interstate Shifting",
+    description:
+      "Trusted moving company in Kochi for home relocation, office shifting, and all-India interstate moves.",
+    type: "website",
+    url: "https://best-movers.in/services",
+    locale: "en_IN",
+    images: [
+      {
+        url: "https://best-movers.in/assets/service-hero.webp",
+        alt: "Best Packers and Movers in Kochi",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Packers and Movers in Kochi | Home, Office & Interstate Shifting",
+    description:
+      "Trusted moving company in Kochi for home relocation, office shifting, and all-India interstate moves.",
+    images: ["https://best-movers.in/assets/service-hero.webp"],
+  },
+};
+
+const serviceSchema = {
+  "@context": "https://schema.org",
+  "@type": "MovingCompany",
+  name: "Best Packers & Movers",
+  url: "https://best-movers.in/services",
+  logo: "https://best-movers.in/assets/best-packers-logo.png",
+  image: "https://best-movers.in/assets/service-hero.webp",
+  description:
+    "Best Packers and Movers in Kochi offering home shifting, office relocation, interstate moving, vehicle transport, and storage services across India.",
+  telephone: "+919562763030",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "Kochi, Kerala",
+    addressLocality: "Kochi",
+    addressRegion: "Kerala",
+    addressCountry: "IN",
+  },
+  areaServed: ["Kochi", "Ernakulam", "Trivandrum", "Calicut", "Bangalore", "Chennai", "Hyderabad"],
+  serviceType: [
+    "Home Relocation",
+    "Office Shifting",
+    "Interstate Moving",
+    "Vehicle Transportation",
+  ],
+};
 
 export default function ServicesPage() {
     return (
         <main className="w-full bg-white">
+          <script
+            type="application/ld+json"
+            dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
+          />
             {/* HERO SECTION - UNCHANGED */}
             <section className="relative h-[60vh] min-h-[400px]">
                 <Image
-                    src={bgAyur}
-                    alt="About Best Packers and Movers"
+                    src="/assets/service-hero.webp"
+                    alt="Best Packers and Movers in Kochi - Home and Office Relocation"
                     fill
                     priority
                     className=" object-top-left object-cover "
@@ -29,9 +94,12 @@ export default function ServicesPage() {
                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-black/20" />
 
                 <div className="relative z-10 h-full flex flex-col justify-end items-center text-center px-6 pb-6">
-                    <h1 className="text-white text-4xl md:text-4xl font-bold">Our Services</h1>
+                    <h1 className="text-white text-4xl md:text-4xl font-bold">
+                      Best Packers and Movers in Kochi for Home, Office & Interstate Moving
+                    </h1>
                     <p className="mt-4 text-white/90 max-w-2xl text-lg">
-                        Comprehensive moving solutions for homes, offices & businesses
+                      Trusted Kochi relocation specialists for home shifting, office moving,
+                      vehicle transport, and long-distance moving across India.
                     </p>
                 </div>
             </section>
@@ -53,7 +121,8 @@ export default function ServicesPage() {
 
                         <p className="text-xl text-gray-600 leading-relaxed mb-8">
                             Best Packers & Movers provide reliable household shifting, office relocation,
-                            vehicle transportation, and interstate moving services across Kerala and India.
+                            vehicle transportation, and interstate moving services from Kochi to anywhere in India.
+                            We specialize in home shifting, office shifting, and long distance relocation.
                         </p>
 
                         <div className="flex flex-wrap justify-center gap-4 text-sm">

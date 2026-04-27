@@ -4,6 +4,42 @@ import Link from "next/link";
 import { services, testimonials } from "./utils/constantFiles";
 import About from "../components/About"
 
+export const metadata = {
+  title: "Best Packers & Movers in Kochi | Home, Office & Interstate Shifting",
+  description:
+    "Best Packers & Movers in Kochi offering home shifting, office relocation, and interstate moving services. Reliable moving company for local and long-distance relocation from Kochi to anywhere in India.",
+  keywords: [
+    "best packers and movers kochi",
+    "packers movers kochi",
+    "home shifting kochi",
+    "office relocation kochi",
+    "interstate moving kochi",
+  ],
+  openGraph: {
+    title: "Best Packers & Movers in Kochi | Home, Office & Interstate Shifting",
+    description:
+      "Trusted moving company in Kochi for home, office and interstate relocation services across India.",
+    type: "website",
+    url: "https://best-movers.in",
+    locale: "en_IN",
+    images: [
+      {
+        url: "https://best-movers.in/assets/best-packers-service.webp",
+        alt: "Best Packers and Movers in Kochi",
+        width: 1200,
+        height: 630,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Best Packers & Movers in Kochi | Home, Office & Interstate Shifting",
+    description:
+      "Trusted moving company in Kochi for home, office and interstate relocation services across India.",
+    images: ["https://best-movers.in/assets/best-packers-service.webp"],
+  },
+};
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
