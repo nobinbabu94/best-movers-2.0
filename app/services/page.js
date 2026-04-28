@@ -192,9 +192,9 @@ export default function ServicesPage() {
                             },
                             {
                                 icon: "📦",
-                                title: "Storage & Warehousing",
-                                desc: "Short-term and long-term storage solutions in secure, monitored facilities.",
-                                points: ["Climate control", "24/7 CCTV", "Flexible plans"],
+                                title: "Storage, Godown & Warehousing",
+                                desc: "Secure godown and warehouse storage for short-term and long-term needs in monitored facilities.",
+                                points: ["Climate control", "24/7 CCTV", "Secure godown access"],
                                 color: "indigo"
                             },
                             {
@@ -405,7 +405,7 @@ export default function ServicesPage() {
                             },
                             {
                                 q: "Do you offer storage facilities?",
-                                a: "Yes, we have secure warehousing facilities with 24/7 CCTV surveillance for both short-term and long-term storage requirements."
+                                a: "Yes, we provide secure godown and warehouse storage with 24/7 surveillance, inventory management, and flexible short-term or long-term plans."
                             },
                         ].map((faq, i) => (
                             <details

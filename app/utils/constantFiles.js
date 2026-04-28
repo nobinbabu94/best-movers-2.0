@@ -90,8 +90,8 @@ export const services = [
     img: "/assets/Door-to-Door-Movingi-Services.webp"
   },
   {
-    title: "Warehousing & Storage Services",
-    desc: "Secure warehousing and storage services for short-term and long-term needs.",
+    title: "Warehousing, Godown & Storage Services",
+    desc: "Secure godown and warehouse storage services with monitored facilities for short-term and long-term needs.",
     img: "/assets/Warehousing-Storage-Services.webp"
   },
   {

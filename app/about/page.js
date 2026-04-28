@@ -198,7 +198,7 @@ export default function AboutPage() {
 
       <p className="text-gray-600 mb-10 leading-relaxed">
         Our comprehensive range of services includes household shifting, office relocation,
-        vehicle transportation, warehousing solutions, and international moving services.
+        vehicle transportation, secure godown and warehousing solutions, and international moving services.
         Whether you are planning a local move within Kerala or relocating across India,
         our expert team ensures a smooth and stress-free experience.
       </p>
