@@ -20,16 +20,13 @@ export default function IndiaPage() {
     <main className="w-full bg-white">
       <section className="relative h-[60vh] min-h-[450px] bg-[url('/assets/Hero-img-3.webp')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
+        <div className="relative z-10 flex h-full flex-col items-center justify-end text-center px-6 pb-2">
           <p className="text-sm uppercase tracking-[0.4em] text-blue-200 mb-4">
             Packers and Movers from Kerala to Anywhere in India
           </p>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5">
             All-India Moving Services
           </h1>
-          <p className="max-w-3xl text-base md:text-lg text-slate-200 leading-relaxed">
-            Best Packers & Movers specializes in safe home shifting, household relocation, and long-distance moving from Kochi to anywhere in India.
-          </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link href="/contact" className="rounded-full bg-blue-600 px-8 py-4 text-white font-semibold shadow-xl hover:bg-blue-700 transition">
               Request a Quote
@@ -51,7 +48,7 @@ export default function IndiaPage() {
               Packers and Movers from Kerala to All India Destinations
             </h2>
             <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-              Professional packing and moving services for home and household relocation anywhere in India.
+              Professional packing and moving services for home and household relocation anywhere in India. Best Packers & Movers specializes in safe home shifting, household relocation, and long-distance moving from Kochi to anywhere in India.
             </p>
           </div>
 

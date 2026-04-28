@@ -20,16 +20,13 @@ export default function KochiPage() {
     <main className="w-full bg-white">
       <section className="relative h-[60vh] min-h-[450px] bg-[url('/assets/hero-img-4.webp')] bg-cover bg-center">
         <div className="absolute inset-0 bg-black/60" />
-        <div className="relative z-10 flex h-full flex-col items-center justify-center text-center px-6">
+        <div className="relative z-10 flex h-full flex-col items-center justify-end pb-2 text-center px-6">
           <p className="text-sm uppercase tracking-[0.4em] text-blue-200 mb-4">
             Packers and Movers in Kochi
           </p>
           <h1 className="text-4xl md:text-5xl font-extrabold text-white mb-5">
             Trusted Home Shifting Services in Kochi
           </h1>
-          <p className="max-w-3xl text-base md:text-lg text-slate-200 leading-relaxed">
-            Best Packers & Movers provides safe and affordable household relocation, packing and moving, and interstate moving services from Kochi to anywhere in India.
-          </p>
           <div className="mt-10 flex flex-col sm:flex-row gap-4">
             <Link href="/contact" className="rounded-full bg-blue-600 px-8 py-4 text-white font-semibold shadow-xl hover:bg-blue-700 transition">
               Get a Free Quote
@@ -51,7 +48,7 @@ export default function KochiPage() {
               Best Packers & Movers in Kochi for Every Home Move
             </h2>
             <p className="mt-4 text-lg text-gray-600 leading-relaxed">
-              Home shifting, household relocation, and professional packing and moving services for families and businesses in Kochi.
+              Home shifting, household relocation, and professional packing and moving services for families and businesses in Kochi. Best Packers & Movers also offers safe, affordable packing and interstate moving services from Kochi to anywhere in India.
             </p>
           </div>
 
