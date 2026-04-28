@@ -6,6 +6,9 @@ const quickLinks = [
     { name: "Home", href: "/" },
     { name: "About Us", href: "/about" },
     { name: "Services", href: "/services" },
+    { name: "Kochi", href: "/kochi" },
+    { name: "All India", href: "/india" },
+    { name: "Blog", href: "/blog" },
     { name: "Gallery", href: "/gallery" },
     { name: "Contact", href: "/contact" },
 ];

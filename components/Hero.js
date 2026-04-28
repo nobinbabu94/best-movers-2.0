@@ -42,20 +42,20 @@ const StarIcon = () => (
 /* -------------------- Hero -------------------- */
 export default function Hero() {
   const slides = [
-    { 
-      image: '/assets/hero-img-4.webp', 
-      title: "Professional Moving Services", 
-      subtitle: "Seamless relocations across the city"
+    {
+      image: '/assets/hero-img-4.webp',
+      title: "Packers & Movers in Kochi",
+      subtitle: "Trusted home shifting services and household relocation from Kochi.",
     },
-    { 
-      image: '/assets/Hero-img-2.webp', 
-      title: "Safe & Secure Packing", 
-      subtitle: "Your belongings handled with care"
+    {
+      image: '/assets/Hero-img-2.webp',
+      title: "Professional Packers & Movers",
+      subtitle: "Reliable relocation company for local and interstate moves.",
     },
-    { 
-      image: '/assets/Hero-img-3.webp', 
-      title: "24/7 Available", 
-      subtitle: "Moving made easy, anytime"
+    {
+      image: '/assets/Hero-img-3.webp',
+      title: "Kerala to All-India Moving",
+      subtitle: "Safe packers and movers from Kerala to anywhere in India.",
     },
   ];
 

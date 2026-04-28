@@ -35,6 +35,7 @@ export default function Navbar({ logo }) {
     { href: "/", label: "Home" },
     { href: "/about", label: "About" },
     { href: "/services", label: "Services" },
+    { href: "/blog", label: "Blog" },
     { href: "/gallery", label: "Gallery" },
     { href: "/contact", label: "Contact" },
   ];

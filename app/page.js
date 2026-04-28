@@ -5,20 +5,23 @@ import { services, testimonials } from "./utils/constantFiles";
 import About from "../components/About"
 
 export const metadata = {
-  title: "Best Packers & Movers in Kochi | Home, Office & Interstate Shifting",
+  title: "Packers and Movers in Kochi | Best Packers & Movers",
   description:
-    "Best Packers & Movers in Kochi offering home shifting, office relocation, and interstate moving services. Reliable moving company for local and long-distance relocation from Kochi to anywhere in India.",
+    "Best Packers and Movers in Kochi offering professional home shifting services, household relocation, and packing and moving services from Kerala to anywhere in India. Trusted packers and movers near me for secure and affordable relocation.",
   keywords: [
-    "best packers and movers kochi",
-    "packers movers kochi",
-    "home shifting kochi",
-    "office relocation kochi",
-    "interstate moving kochi",
+    "packers and movers in kochi",
+    "best packers and movers in kochi",
+    "home shifting services",
+    "household relocation services",
+    "reliable moving company near me",
+    "relocation services company",
+    "interstate packers and movers",
+    "packers and movers near me",
   ],
   openGraph: {
-    title: "Best Packers & Movers in Kochi | Home, Office & Interstate Shifting",
+    title: "Packers and Movers in Kochi | Best Packers & Movers",
     description:
-      "Trusted moving company in Kochi for home, office and interstate relocation services across India.",
+      "Trusted packers and movers in Kochi for home shifting, household relocation, and interstate moving from Kerala to anywhere in India.",
     type: "website",
     url: "https://best-movers.in",
     locale: "en_IN",
@@ -44,6 +47,46 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-white">
       <Hero />
+
+      <section className="bg-blue-600 py-16 text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid gap-8 lg:grid-cols-2 items-center">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-blue-200 mb-3">
+                Local Packers & Movers
+              </p>
+              <h2 className="text-4xl font-extrabold tracking-tight sm:text-5xl">
+                Kochi and All-India Movers
+              </h2>
+              <p className="mt-5 max-w-xl text-base text-blue-100 leading-relaxed">
+                Explore dedicated pages for "Packers and Movers in Kochi" and "All-India Moving Services". Get local quotes for home shifting, household relocation, and interstate moving.
+              </p>
+              <div className="mt-8 flex flex-wrap gap-4">
+                <a
+                  href="/kochi"
+                  className="inline-flex items-center justify-center rounded-full bg-white px-8 py-3 text-blue-700 font-semibold shadow-lg hover:bg-slate-100 transition"
+                >
+                  Packers and Movers in Kochi
+                </a>
+                <a
+                  href="/india"
+                  className="inline-flex items-center justify-center rounded-full border border-white/40 bg-white/10 px-8 py-3 text-white font-semibold hover:bg-white/20 transition"
+                >
+                  All-India Moving Services
+                </a>
+              </div>
+            </div>
+            <div className="rounded-3xl border border-white/10 bg-white/10 p-8 shadow-2xl backdrop-blur">
+              <h3 className="text-2xl font-semibold text-white mb-4">Featured Services</h3>
+              <ul className="space-y-4 text-blue-100">
+                <li>Home shifting services in Kochi and across India</li>
+                <li>Household relocation services near me</li>
+                <li>Reliable moving company for interstate relocation</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* About Section - Enhanced Design */}
       <About />

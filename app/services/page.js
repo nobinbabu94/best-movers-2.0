@@ -2,16 +2,18 @@ import Link from "next/link";
 import Image from "next/image";
 
 export const metadata = {
-  title: "Best Packers and Movers in Kochi | Home, Office & Interstate Shifting",
+  title: "Home Shifting Services | Best Packers and Movers in Kochi",
   description:
-    "Best Packers and Movers in Kochi offering trusted home shifting, office relocation, interstate moving, and vehicle transport services across India.",
+    "Home shifting services, household relocation, and packing and moving services in Kochi. Reliable relocation services company from Kerala to anywhere in India.",
   keywords: [
-    "best packers and movers kochi",
-    "packers and movers kochi",
-    "office shifting kochi",
-    "home shifting kochi",
-    "interstate movers from kochi",
-    "moving company kochi",
+    "home shifting services",
+    "household relocation services",
+    "packers and movers in kochi",
+    "relocation services company",
+    "interstate packers and movers",
+    "affordable home shifting service",
+    "professional packing and moving services",
+    "packers and movers near me",
   ],
   alternates: {
     canonical: "/services",
@@ -58,7 +60,7 @@ const serviceSchema = {
     addressRegion: "Kerala",
     addressCountry: "IN",
   },
-  areaServed: ["Kochi", "Ernakulam", "Trivandrum", "Calicut", "Bangalore", "Chennai", "Hyderabad"],
+  areaServed: ["Kochi", "Ernakulam", "Trivandrum", "Calicut", "Bangalore", "Hyderabad"],
   serviceType: [
     "Home Relocation",
     "Office Shifting",
@@ -151,10 +153,10 @@ export default function ServicesPage() {
                             Our Services
                         </span>
                         <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-                            Professional Moving Solutions
+                            Home Shifting Services & Household Relocation
                         </h2>
                         <p className="text-lg text-gray-600">
-                            Comprehensive relocation services tailored to your specific needs
+                            Trusted packing and moving services in Kochi for home shifting, household relocation, and interstate moves across India.
                         </p>
                     </header>
 
